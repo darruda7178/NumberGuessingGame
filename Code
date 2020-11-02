@@ -1,0 +1,26 @@
+import random
+
+r = random.randint(0,100)
+
+name = input("Enter your name: ")
+
+print("Hello", name, "Try to guess a random number from 0 to 100!")
+
+def GuessTheNumber():
+    g = int(input("\nType in your guess here: "))
+    if r == g:
+       print("\nCongratulations, you won!")
+    elif g > 100:
+       print("The number has to be in between 0 and 100.")
+       GuessTheNumber()
+    elif g < 0:
+       print("The number has to be in between 0 and 100.")
+       GuessTheNumber()
+    elif r > g:
+       print("The random number is higher than your guess.")
+       GuessTheNumber()
+    elif r < g:
+       print("The random number is lower than your guess.")
+       GuessTheNumber()
+       
+GuessTheNumber()
